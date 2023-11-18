@@ -5,7 +5,7 @@ import 'package:basic_cubit/models/user_model.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -40,19 +40,19 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Future Builder"),
+          title: const Text("Future Builder"),
           centerTitle: true,
         ),
         body: FutureBuilder(
             future: GetData(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
+                return const Center(
                   child: Text("Loading..."),
                 );
               } else {
                 if (allUser.length == 0) {
-                  return Center(
+                  return const Center(
                     child: Text("Tidak ada data"),
                   );
                 }
